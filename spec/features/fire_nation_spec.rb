@@ -5,7 +5,7 @@ describe "fire nation page" do
     it "allows users to search for members" do
       visit search_path
 
-      expect(page).to have_content(TheLastAirbenderService.population_count("fire"))
+      expect(page).to have_content(TheLastAirbenderFacade.population_count("Fire"))
 
     end
   end
