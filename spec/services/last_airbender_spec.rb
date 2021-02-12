@@ -2,19 +2,23 @@ require "rails_helper"
 
 describe "The last airbender service" do
   describe "(happy path)" do
-    it "can get members of a nation" do
-      results = TheLastAirbenderService.get_characters("Fire+Nation")
-      expect(results.count).to eq(25)
-      expect(results[0]).to be_a(Hash)
+    it "can get info for a nation" do
+      results = TheLastAirbenderService.get_nation_info("Fire+Nation")
+      population = results[:population]
+      characters = results[:characters]
 
-      results = TheLastAirbenderService.get_characters("Fire+Nation",10)
-      expect(results.count).to eq(10)
-      expect(results[0]).to be_a(Hash)
-    end
+      first_character = characters[0]\
 
-    it "can get the population count of a nation" do
-      results = TheLastAirbenderService.get_population("Fire+Nation")
-      expect(results).to be_a(Integer)
+      expect(population).to be_an(Integer)#expect(subject.first).to have_key(:revenue)
+      expect(characters).to be_a(Array)
+
+      expect(first_character).to have_key(:allies)
+      expect(first_character).to have_key(:enemies)
+      expect(first_character).to have_key(:affiliations)
+
+      expect(first_character[:allies]).to be_an(Array)
+      expect(first_character[:enemies]).to be_an(Array)
+      expect(first_character[:affiliations]).to be_an(Array)
     end
   end
 end
