@@ -1,4 +1,4 @@
 <b><%= locals[:char].name %></b><br>
 Affiliation: <%= locals[:char].affiliation %><br>
-Enemies: <%= locals[:char].enemies.count > 0 ? locals[:char].enemies * ", " : "None" %><br>
-Enemies: <%= locals[:char].allies.count > 0 ? locals[:char].allies * ", " : "None" %><br>
+Enemies: <%= format_relations(locals[:char].enemies) %><br>
+Enemies: <%= format_relations(locals[:char].allies) %><br>
