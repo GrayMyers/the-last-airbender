@@ -1,0 +1,7 @@
+<h1>Search Page</h1>
+<h3>Population: <%= @info[:population] %><h3><br><br>
+
+<h3>Characters: <h3>
+<% @info[:characters].each do |char| %>
+  <%= render "character_info", locals: {char: char} %><br><br>
+<% end %>
