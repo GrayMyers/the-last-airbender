@@ -1,4 +1,5 @@
-<b><%= locals[:char].name %></b><br>
+<h4><%= locals[:char].name %></h4><br>
+<%= image_tag locals[:char].image_url %><br>
 Affiliation: <%= locals[:char].affiliation %><br>
 Enemies: <%= format_relations(locals[:char].enemies) %><br>
 Enemies: <%= format_relations(locals[:char].allies) %><br>

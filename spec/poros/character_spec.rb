@@ -9,6 +9,7 @@ describe Character do
     char = Character.new(hash)
 
     expect(char).to be_a(Character)
+    expect(char.image_url).to be_a(String)
     expect(char.enemies).to eq(hash[:enemies])
     expect(char.allies).to eq(hash[:allies])
     expect(char.affiliation).to eq(hash[:affiliation])
