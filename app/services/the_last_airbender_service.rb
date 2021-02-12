@@ -3,6 +3,7 @@ class TheLastAirbenderService
 
   def self.get_nation_info(nation_name,number_of_characters)
     response = conn.get("characters?affiliation=#{nation_name}&perPage=#{LARGE_NUMBER}")
+    results = json_parse(response)
     {
       population: results.count,
       characters: results[0..(number_of_characters-1)]
