@@ -15,11 +15,11 @@ describe "The last airbender service" do
 
       expect(first_character).to have_key(:allies)
       expect(first_character).to have_key(:enemies)
-      expect(first_character).to have_key(:affiliations)
+      expect(first_character).to have_key(:affiliation)
 
       expect(first_character[:allies]).to be_an(Array)
       expect(first_character[:enemies]).to be_an(Array)
-      expect(first_character[:affiliations]).to be_an(Array)
+      expect(first_character[:affiliation]).to be_an(String)
     end
   end
 end
